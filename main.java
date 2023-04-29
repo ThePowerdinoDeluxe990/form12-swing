@@ -4,6 +4,9 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 import javax.sound.sampled.AudioInputStream;
@@ -59,6 +62,7 @@ public class main {
       public void actionPerformed(ActionEvent a){
         String nombr1e = text.getText();
         String edad1 = edadtext.getText();
+        LocalDateTime fecha = LocalDateTime.now();
 
         String genero= comboBox.getSelectedItem().toString();
 
@@ -67,8 +71,11 @@ public class main {
         System.out.println(genero);
         if(nombr1e.equals("")){
           clip.start();
-          JOptionPane.showMessageDialog(null, "Error Fatal se generará un archivo null", "Informacion", JOptionPane.ERROR_MESSAGE);
-          
+          JLabel label = new JLabel("Error Fatal se generará un archivo null");
+        label.setFont(new Font("Trebuchet MS", Font.BOLD, 18));
+        JButton button = new JButton("custom button");
+        Object[] options ={button};
+          JOptionPane.showMessageDialog(null, label, "Informacion", JOptionPane.ERROR_MESSAGE);
         }else{
         }
         try{
@@ -76,6 +83,7 @@ public class main {
           writer.append("Nombre: "+nombr1e);
           writer.append("\nEdad: "+edad1);
           writer.append("\nGenero: "+genero);
+          writer.append("\nFecha: "+fecha);
           writer.close();
          }catch(IOException e){
           e.printStackTrace();
