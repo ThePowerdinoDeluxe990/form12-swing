@@ -85,11 +85,13 @@ public class main {
    
     JFrame jFrame = new JFrame("Formulario");
     jFrame.setSize(500, 500);
+    jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     jFrame.setLayout(null);
     jFrame.add(label);
     jFrame.setIconImage(icon);
     jFrame.add(edad);
     jFrame.add(send);
+    jFrame.setResizable(false);
     jFrame.add(comboBox);
     jFrame.getContentPane().setBackground(Color.black);
     jFrame.add(edadtext);
