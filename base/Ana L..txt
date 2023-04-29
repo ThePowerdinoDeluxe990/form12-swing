@@ -1,0 +1,3 @@
+Nombre: Ana L.
+Edad: 23
+Genero: mujer

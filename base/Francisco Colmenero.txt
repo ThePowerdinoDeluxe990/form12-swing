@@ -1,0 +1,3 @@
+Nombre: Francisco Colmenero
+Edad: 10000
+Genero: hombre
