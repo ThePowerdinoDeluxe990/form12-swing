@@ -69,25 +69,27 @@ public class main {
         System.out.println(nombr1e);
         System.out.println(edad1);
         System.out.println(genero);
+
         if(nombr1e.equals("")){
           clip.start();
-          JLabel label = new JLabel("Error Fatal se generará un archivo null");
+          JLabel label = new JLabel("Error Fatal,");
         label.setFont(new Font("Trebuchet MS", Font.BOLD, 18));
         JButton button = new JButton("custom button");
         Object[] options ={button};
           JOptionPane.showMessageDialog(null, label, "Informacion", JOptionPane.ERROR_MESSAGE);
         }else{
+          try{
+            FileWriter writer= new FileWriter(".\\base\\"+nombr1e+".txt");
+            writer.append("Nombre: "+nombr1e);
+            writer.append("\nEdad: "+edad1);
+            writer.append("\nGenero: "+genero);
+            writer.append("\nFecha: "+fecha);
+            writer.close();
+           }catch(IOException e){
+            e.printStackTrace();
+           }
         }
-        try{
-          FileWriter writer= new FileWriter(".\\base\\"+nombr1e+".txt");
-          writer.append("Nombre: "+nombr1e);
-          writer.append("\nEdad: "+edad1);
-          writer.append("\nGenero: "+genero);
-          writer.append("\nFecha: "+fecha);
-          writer.close();
-         }catch(IOException e){
-          e.printStackTrace();
-         }
+      
       }});
 
    
